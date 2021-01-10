@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const icons = "m-4 text-white transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-400";
 const iconSize = "5x";
@@ -12,24 +13,44 @@ const placeholderWeb = "I run a small business based in North London. We are cur
  const ContactMe = () => {
 
     const [state, setState] = useState({
+
         name:'',
         email: '',
         subject: '',
         message: ''
+
     })
 
+    const [result, setResult] = useState(null)
+
     const sendEmail = e => {
+
         e.preventDefault();
+
+
+        axios({
+          url:'http://localhost:5000/api/send',
+          method: 'POST',
+          data: {...state}
+        })
+            .then(res => {
+              setResult(res.data);
+              setState({name:'',email:'',subject:'',message:''})
+            })
+            .catch(() => {
+              setResult({ success:false, message: 'Something went wrong. Try again later'})
+            })
     };
 
     const onInputChange = e => {
 
-        const { name,value } = e.target;
-
+        const { name, value } = e.target;
+        console.log(e.target.name);
         setState({
-            state,
+            ...state,
             [name]:value
         });
+        console.log(state);
     };
 
 
@@ -39,40 +60,40 @@ const placeholderWeb = "I run a small business based in North London. We are cur
    <form onSubmit={sendEmail} className="mt-6 w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center mb-4">
         <span className="w-full">
-          <label for="firstname" className="block font-semibold">Name</label>
-          <input id="firstname" type="text" name="firstname" placeholder="John" autoComplete="given-name" className={`${inputs} w-full`} required />
+          <label htmlFor="name" className="block font-semibold">Name</label>
+          <input id="name" type="text" value={state.name} onChange={onInputChange} name="name" placeholder="John" autoComplete="given-name" className={`${inputs} w-full`} required/>
         </span>
         <span className="w-full">
-          <label for="lastname" className="block font-semibold">Email</label>
-          <input id="email" type="email" name="email" placeholder="john.doe@company.com" autoComplete="email" className={`${inputs} w-full `} required />
+          <label htmlFor="email" className="block font-semibold">Email</label>
+          <input id="email" type="email" value={state.email} onChange={onInputChange} name="email" placeholder="john.doe@company.com" autoComplete="email" className={`${inputs} w-full `} required />
         </span>
       </div>
-      <label for="email" className="block mt-2 font-semibold">Subject (Optional)</label>
+      <label htmlFor="email" className="block mt-2 font-semibold">Subject (Optional)</label>
 
 <div className="flex sm:flex-nowrap flex-wrap mt-4">
 <div className="w-full sm:w-auto">
       <label className="flex content-center p-3">
-        <input type="checkbox" className=""/>
+        <input type="checkbox" name="subject" className=""/>
         <span className="ml-3">Web Development</span>
       </label>
     </div>
     <div className="w-full sm:w-auto">
       <label className="flex content-center p-3">
-        <input type="checkbox" className=""/>
+        <input type="checkbox" name="subject" onChange={onInputChange} className=""/>
         <span className="ml-3">Graphic Design</span>
       </label>
     </div>
     <div className="w-full sm:w-auto">
       <label className="flex content-center p-3">
-        <input type="checkbox" className=""/>
+        <input type="checkbox" name="subject" onChange={onInputChange} className=""/>
         <span className="ml-3">Engineering</span>
       </label>
     </div>
 </div>
 
 <div className="relative">
-<label for="lastname" className="block font-semibold">Message</label>
-      <textarea id="firstname" type="text" name="firstname" placeholder={placeholderWeb} autoComplete="given-name" className={`${inputs} w-full h-56 content-start min-h-20`} required />
+<label htmlFor="message" className="block font-semibold">Message</label>
+      <textarea id="message" type="text" name="message" onChange={onInputChange} placeholder={placeholderWeb} className={`${inputs} w-full h-56 content-start min-h-20`} required />
      <button type="submit" className="transition duration-500 ease-in-out transform hover:-translate-y-2 hover:bg-green-900 bg-green-800  text-white shadow-lg bottom-4 right-4 rounded-md text-xl p-4 absolute">
         Send
       </button>

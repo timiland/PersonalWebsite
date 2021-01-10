@@ -10,7 +10,7 @@ export default function GraphicDesign() {
     return (
 <div className="p-4">
    <h1 className="text-4xl mb-8 w-full text-center">Graphic Design</h1>
-   <img className={`${"mx-auto px-64 -mb-20 -mt-36"}`} src={require('../images/Jaguar.png')}></img>
+   <img className={`${"mx-auto w-full -my-16"}`} src={require('../images/Jaguar.png')}></img>
    <p className="text-center text-lg"> I specialise in using SolidWorks for parametric CAD modelling and have over 5 years of experience using this software. Using Visual basic I have managed to automate the software using some of my own macros, but more recently I have used DriveWorks to implement automation projects.<br/><br/> I like to use Blender for more organic modelling, and I have experience using Materialise Magics for Additive Manufacturing - whilst there are other programs for 3D printing, I believe that Magics is a cut above them.</p>
  </div>
     )
