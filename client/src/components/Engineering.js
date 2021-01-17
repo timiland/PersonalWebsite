@@ -14,9 +14,9 @@ export default function Engineering() {
        <h2 className="text-4xl my-4 w-full text-center">Resume</h2>
         <p className={`${li} w-full`}><span className="font-bold">MEng Mechanical and Manufacturing Engineering</span><br/>The University of Warwick<br/>( Graduated 2017 with 1st Class Honours )</p>
         <p className={`${li} w-full`}><span className="font-bold">Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">Solid Solutions</a> (2014 - 2015)</p>
-        <p className={`${li} w-full`}><span className="font-bold">Polymer Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">3T Additive Manufacturing</a> (2018 - 2020)</p>
+        <p className={`${li} w-full`}><span className="font-bold">Polymer Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800 fontSecondary">3T Additive Manufacturing</a> (2018 - 2020)</p>
         <p className={`${li} w-full`}><span className="font-bold">Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">DriveWorks</a> (2020 - current)</p>
-        <div className="w-full transition duration-500 ease-in-out transform hover:-translate-y-2 hover:bg-green-900 bg-green-800  text-white shadow-lg rounded-md text-2xl p-4 m-4">Download Full Resume</div>
+        <a href="Root\client\src\download\CV TIM ILAND Tech.pdf" className="cursor-pointer w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-green-900 bg-green-800  text-white shadow-lg rounded-md text-2xl p-4 m-4" download>Download Full Resume</a>
 
        </div>
        <div className={`${card}`}>

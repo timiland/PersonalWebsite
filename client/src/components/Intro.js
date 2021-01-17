@@ -18,7 +18,7 @@ import images from './App'
 
 export default function Intro() {
     return (
-        <div className="h-screen flex flex-wrap">
+        <div className="h-screen flex flex-wrap pt-20">
             <div className="w-full md:w-1/2 flex justify-center md:justify-end p-4">
                 <div className="overflow-hidden h-64 w-64 rounded-full">
                 <img className="" src={require('../images/Profile Pic.jpg')}></img>

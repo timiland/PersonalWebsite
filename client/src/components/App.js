@@ -29,6 +29,7 @@ class App extends Component {
 <CollapsibleNavbar/>
 
 <ResponsiveSection
+    id="intro"
     topslant= {false}
     bottomslant={true}
     bg={'gray-200'}
@@ -39,6 +40,7 @@ class App extends Component {
 </ResponsiveSection>
 
 <ResponsiveSection
+    id="WebDevelopment"
     topslant= {true}
     bottomslant={true}
     bg={'green-800'}
@@ -49,7 +51,8 @@ class App extends Component {
 </ResponsiveSection>
 
 <ResponsiveSection
-    topslant= {true}
+    id="GraphicDesign"
+    topslant= {false}
     bottomslant={true}
     bg={'white'}
     container={false}
@@ -59,6 +62,7 @@ class App extends Component {
 </ResponsiveSection>
 
 <ResponsiveSection
+    id="Engineering"
     topslant= {true}
     bottomslant={true}
     bg={'green-800'}
@@ -70,6 +74,7 @@ class App extends Component {
     cardtext={''}/>
 </ResponsiveSection>
 <ResponsiveSection
+    id="ContactMe"
     topslant= {true}
     bottomslant={false}
     bg={'gray-200'}

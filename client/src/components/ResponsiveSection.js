@@ -8,7 +8,7 @@ export default function ResponsiveSection(props) {
                 <polygon points="0,0 0,20 20,20" />
                 </svg> : ''}
 
-        <div className={`w-screen bg-${props.bg} ${props.container==true ? 'py-8' : ''}`}>
+        <div className={`w-screen bg-${props.bg} ${props.container==true ? 'py-8' : ''}`} id={props.id}>
             
         <div className={`container px-4 md:px-0 max-w-6xl mx-auto text-${props.textcolor} ${props.container==true ? `bg-${props.containerbg} shadow-lg rounded-lg` : ''}`}>
             {props.children}

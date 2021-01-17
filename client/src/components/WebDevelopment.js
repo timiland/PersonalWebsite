@@ -5,15 +5,15 @@ import { faLink, faCode } from '@fortawesome/free-solid-svg-icons'
 
 const icons = "m-4 transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-400";
 const iconsSm = "text-white shadow-lg rounded-md object-contain";
-const iconSize = "5x";
+const iconSize = "4x";
 const iconSizeSm = "lg";
 const card = "bg-white text-center text-black shadow-lg rounded-2xl";
 
 export default function WebDevelopment() {
     return (
-  <div className="p-4 justify-center">
-    <h1 className="text-4xl mb-8 w-full text-center">Web Stack</h1>
-    <p className="text-center text-lg">I focus primarily on front-end development using React.js, but like to bring other technologies into the mix and have a solid knowledge of Web fundamentals like ES6 Javascript, HTML5 and CSS3. </p>
+  <div className="p-8 justify-center">
+    <h1 className="text-5xl py-10 w-full text-center">Web Development</h1>
+    <p className="mt-4 text-center text-lg">I focus primarily on front-end development using React.js, but like to bring other technologies into the mix and have a solid knowledge of Web fundamentals like ES6 Javascript, HTML5 and CSS3. </p>
 
     <div className="flex flex-wrap justify-center mx-8 mb-8 py-8 border-b border-white">           
         <FontAwesomeIcon icon={faReact} size={iconSize} className={`${icons}`} />
@@ -25,7 +25,7 @@ export default function WebDevelopment() {
         <FontAwesomeIcon icon={faNode}size={iconSize} className={`${icons}`} />
     </div>
     <h2 className="text-4xl my-4 w-full text-center">Projects</h2>
-    <div className={`${'grid sm:grid-cols-3 grid-cols-1 gap-8 mb-8'}`}>
+    <div className={`${'grid sm:grid-cols-3 grid-cols-1 gap-14'}`}>
         <div>
         <h2 className=" text-center text-2xl py-4">Big Cat Poll</h2>
         <div className={`${card}`} >    
