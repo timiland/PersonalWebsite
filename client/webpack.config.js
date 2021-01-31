@@ -45,6 +45,21 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(svg)$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              esModule: false,
+              limit: false,
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: 'images/',
+            },
+          },
+        ],
+      },
     ],
   },
 

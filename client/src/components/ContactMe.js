@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import axios from 'axios'
 
-const inputs = "block p-3 mt-4 mb-2 text-gray-700 bg-white focus:outline-none appearance-none focus:border-2 focus:border-green-800 focus:shadow-inner rounded-md shadow-lg";
+const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none border border-green-800 focus:shadow-inner rounded-md shadow-lg";
 const placeholders = [
   "My business needs a brand new logo, we think that your style would really suit our brand.",
   "We are in need of an Additive Manufacturing expert for our new product line. Would you be available to assess and potentially redesign our products for SLS production?",
@@ -77,20 +77,20 @@ const placeholders = [
 
 
     return (
-<div className="p-4 pt-8 pb-16">
-   <h1 className="text-4xl pb-4 mb-4 w-full text-center border-b border-black">Contact Me</h1>
-   <form onSubmit={sendEmail} className="mt-6 w-full">
+<Fragment>
+<h1 className="text-5xl pt-10 pb-20 mx-4 px-8 mb-14 text-center border-b border-black">Contact Me</h1>
+   <form onSubmit={sendEmail} className="my-6 w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center mb-4">
         <span className="w-full">
-          <label htmlFor="name" className="block font-semibold">Name</label>
+          <label htmlFor="name" className="block text1 text-2xl">Name</label>
           <input id="name" type="text" value={state.name} onChange={onInputChange} name="name" placeholder="Your name please!" autoComplete="given-name" className={`${inputs} w-full`} required/>
         </span>
         <span className="w-full">
-          <label htmlFor="email" className="block font-semibold">Email</label>
+          <label htmlFor="email" className="block text1 text-2xl">Email</label>
           <input id="email" type="email" value={state.email} onChange={onInputChange} name="email" placeholder="your_email@company.org" autoComplete="email" className={`${inputs} w-full `} required />
         </span>
       </div>
-      <label htmlFor="email" className="block mt-2 font-semibold">Subject (Optional)</label>
+      <label htmlFor="email" className="block mt-2 text1 text-2xl">Subject (Optional)</label>
 
 <div className="flex sm:flex-nowrap flex-wrap mt-4">
 <div className="w-full sm:w-auto">
@@ -114,14 +114,14 @@ const placeholders = [
 </div>
 
 <div className="relative">
-<label htmlFor="message" className="block font-semibold">Message</label>
+<label htmlFor="message" className="block text1 text-2xl">Message</label>
       <textarea id="message" type="text" name="message" onChange={onInputChange} placeholder={placeholders[Math.floor(Math.random() * 2) + 1 ]} className={`${inputs} w-full h-56 content-start min-h-20`} required />
      <button type="submit" className="transition duration-500 ease-in-out transform hover:-translate-y-2 hover:bg-green-900 bg-green-800  text-white shadow-lg bottom-4 right-4 rounded-md text-xl p-4 absolute">
         Send
       </button>
       </div>
     </form>
-  </div>
+  </Fragment>
     )
 }
 

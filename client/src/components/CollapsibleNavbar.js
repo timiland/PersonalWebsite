@@ -16,7 +16,7 @@ export default function CollapsibleNavbar() {
 
     function Links(props) {
         return (
-        <div className="z-0 flex flex-col sm:flex-row text-3xl sm:text-2xl content-center my-auto gap-6 py-10 sm:py-0 bg-green-900 sm:bg-transparent bg-opacity-90">
+        <div className="z-0 flex flex-col sm:flex-row text-3xl sm:text-2xl content-center my-auto gap-6 py-10 sm:py-0 bg-yellow-400 sm:bg-transparent bg-opacity-90">
         <Link
             className={`${inputs}`}
             activeClass={active}
@@ -74,7 +74,7 @@ export default function CollapsibleNavbar() {
                     as="button"
                     checked={!isOpen}
                     onChange={() => setIsOpen(!isOpen)}
-                    className={`${isOpen? "h-10" : "h-6"} w-8 focus:outline-none outline-none transition-h duration-300 ease-out sm:hidden cursor-pointer rounded-md flex flex-col justify-between mr-6 my-auto`}
+                    className={`${isOpen? "h-8" : "h-6"} w-8 focus:outline-none outline-none transition-h duration-300 ease-out sm:hidden cursor-pointer rounded-md flex flex-col justify-between mr-6 my-auto`}
                 >
                     <div className={`${burgerMenu}`}></div>
                     <div className={`${burgerMenu}`}></div>
@@ -83,7 +83,7 @@ export default function CollapsibleNavbar() {
             </div>
                 <Transition
                         show={isOpen}
-                        className="z-0 sm:hidden fixed w-screen mt-20 text-yellow-400 border-b-2 border-yellow-400"
+                        className="z-0 sm:hidden fixed w-screen mt-20 text-green-900 border-b-2 border-green-900"
                         enter="transition duration-500"
                         enterFrom="transform opacity-0 -translate-y-full"
                         enterTo="transform opacity-100 -translate-y-0"

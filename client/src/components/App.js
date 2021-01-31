@@ -43,7 +43,7 @@ class App extends Component {
     id="WebDevelopment"
     topslant= {true}
     bottomslant={true}
-    bg={'green-800'}
+    bg={'green-900'}
     container={false}
     containerbg={'white'}
     textcolor={'white'}>

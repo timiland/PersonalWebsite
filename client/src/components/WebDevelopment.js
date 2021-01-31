@@ -1,141 +1,52 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCss3Alt, faJsSquare, faHtml5, faReact, faNpm, faNode, faSass} from '@fortawesome/free-brands-svg-icons'
+import { faCss3Alt, faJsSquare, faHtml5, faReact, faNpm, faNode, faSass, faGithubSquare} from '@fortawesome/free-brands-svg-icons'
 import { faLink, faCode } from '@fortawesome/free-solid-svg-icons'
 
-const icons = "m-4 transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-400";
-const iconsSm = "text-white shadow-lg rounded-md object-contain";
-const iconSize = "4x";
-const iconSizeSm = "lg";
-const card = "bg-white text-center text-black shadow-lg rounded-2xl";
+const iconArr = [faReact,faJsSquare,faHtml5,faCss3Alt,faSass,faNpm,faNode];
+
+const projectsArr = ['Big Cat Poll', 'Dog Selector', 'Ultimate Animal Quiz'];
+
+const icons = iconArr.map((icon, i) => (
+    <FontAwesomeIcon key={i} icon={icon} size="4x" className="m-4 transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-400"/>
+))
+
+const projects = projectsArr.map((project, i) => (
+    <div key={i}>
+        <h2 className=" text-center text-2xl pb-8">{project}</h2>
+        <div className="bg-white text-center text-black shadow-lg rounded-2xl" >    
+        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-md" style={{  
+                backgroundImage: `url(${require('../images/'+ project.replaceAll(' ', '') +'.png')})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+            }}>  
+    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
+    <FontAwesomeIcon icon={faCode} size="lg" className="text-white shadow-lg rounded-md object-contain" />
+        </div>  
+    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
+    <FontAwesomeIcon icon={faLink} size="lg" className="text-white shadow-lg rounded-md object-contain" />
+        </div>  
+        </div>
+        </div>
+        </div>
+))
+
 
 export default function WebDevelopment() {
     return (
-  <div className="p-8 justify-center">
+  <React.Fragment>
     <h1 className="text-5xl py-10 w-full text-center">Web Development</h1>
-    <p className="mt-4 text-center text-lg">I focus primarily on front-end development using React.js, but like to bring other technologies into the mix and have a solid knowledge of Web fundamentals like ES6 Javascript, HTML5 and CSS3. </p>
-
-    <div className="flex flex-wrap justify-center mx-8 mb-8 py-8 border-b border-white">           
-        <FontAwesomeIcon icon={faReact} size={iconSize} className={`${icons}`} />
-        <FontAwesomeIcon icon={faJsSquare} size={iconSize} className={`${icons}`} />
-        <FontAwesomeIcon icon={faHtml5} size={iconSize} className={`${icons}`} />
-        <FontAwesomeIcon icon={faCss3Alt} size={iconSize} className={`${icons}`} />
-        <FontAwesomeIcon icon={faSass} size={iconSize} className={`${icons}`} />
-        <FontAwesomeIcon icon={faNpm} size={iconSize} className={`${icons}`} />
-        <FontAwesomeIcon icon={faNode}size={iconSize} className={`${icons}`} />
+    <p className="py-14 mx-auto max-w-prose text-center text-lg">I focus primarily on front-end development using React.js, although I like to bring other technologies into the mix and have a solid knowledge of Web fundamentals like ES6 Javascript, HTML5 and CSS3. This Website is built using React, with Tailwind for styling and a variety of other packages.</p>
+    <div className="flex justify-center">
+        <div className="text1 cursor-pointer flex items-center text-3xl mt-4 bg-white hover:bg-yellow-400 text-green-900 rounded-md p-2 pr-4 transition duration-500 ease-in-out transform hover:-translate-y-1"><FontAwesomeIcon icon={faGithubSquare} size="2x" className="mr-4"/>Github</div></div>
+    <div className="flex flex-wrap justify-center py-16 border-b border-white">           
+        {icons}
     </div>
-    <h2 className="text-4xl my-4 w-full text-center">Projects</h2>
-    <div className={`${'grid sm:grid-cols-3 grid-cols-1 gap-14'}`}>
-        <div>
-        <h2 className=" text-center text-2xl py-4">Big Cat Poll</h2>
-        <div className={`${card}`} >    
-        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-lg" style={{  
-                backgroundImage: `url(${require('../images/BigCatPoll.png')})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
-    <FontAwesomeIcon icon={faCode} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
-    <FontAwesomeIcon icon={faLink} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
+    <h2 className="text-4xl my-16 w-full text-center">Projects</h2>
+    <div className={`${'grid sm:grid-cols-3 grid-cols-1 gap-16'}`}>   
+        {projects}
         </div>
-        </div>
-        </div>
-        <div>
-        <h2 className=" text-center text-2xl py-4">Dog Selector</h2>
-        <div className={`${card}`} >    
-        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-lg" style={{  
-                backgroundImage: `url(${require('../images/DogSelector.png')})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
-    <FontAwesomeIcon icon={faCode} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
-    <FontAwesomeIcon icon={faLink} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-        </div>
-        </div>
-        </div>
-        <div>
-        <h2 className=" text-center text-2xl py-4">Ultimate Animal Quiz</h2>
-        <div className={`${card}`} >    
-        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-lg" style={{  
-                backgroundImage: `url(${require('../images/UltimateAnimalQuiz.png')})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
-    <FontAwesomeIcon icon={faCode} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
-    <FontAwesomeIcon icon={faLink} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-        </div>
-        </div>
-        </div>
-        <div>
-        <h2 className=" text-center text-2xl py-4">Big Cat Poll</h2>
-        <div className={`${card}`} >    
-        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-lg" style={{  
-                backgroundImage: `url(${require('../images/BigCatPoll.png')})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
-    <FontAwesomeIcon icon={faCode} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
-    <FontAwesomeIcon icon={faLink} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-        </div>
-        </div>
-        </div>
-        <div>
-        <h2 className=" text-center text-2xl py-4">Dog Selector</h2>
-        <div className={`${card}`} >    
-        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-lg" style={{  
-                backgroundImage: `url(${require('../images/DogSelector.png')})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
-    <FontAwesomeIcon icon={faCode} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
-    <FontAwesomeIcon icon={faLink} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-        </div>
-        </div>
-        </div>
-        <div>
-        <h2 className=" text-center text-2xl py-4">Ultimate Animal Quiz</h2>
-        <div className={`${card}`} >    
-        <div className="h-56 flex flex-wrap justify-end content-end p-4 rounded-lg" style={{  
-                backgroundImage: `url(${require('../images/UltimateAnimalQuiz.png')})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-l-md shadow-md">
-    <FontAwesomeIcon icon={faCode} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-    <div className="transition duration-500 ease-in-out hover:bg-green-900 bg-green-800 p-3 rounded-r-md shadow-md">
-    <FontAwesomeIcon icon={faLink} size={iconSizeSm} className={`${iconsSm}`} />
-        </div>  
-        </div>
-        </div>
-        </div>
- </div>
-
-    </div>
+    </React.Fragment>
     )
 }

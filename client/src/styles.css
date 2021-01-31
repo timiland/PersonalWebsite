@@ -8,7 +8,8 @@
 
 h1,
 h2,
-h3 {
+h3,
+.text1 {
   /* font-family: 'Russo One', sans-serif; */
   font-family: 'DM Serif Display', serif;
 }
