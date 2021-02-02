@@ -10,6 +10,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(jpg|png|gif|svg)$/,
+        loader: 'image-webpack-loader',
+        enforce: 'pre'
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -37,7 +42,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               esModule: false,
-              limit: false,
+              limit: 10 * 1024,
               name: '[name].[ext]',
               outputPath: 'images/',
               publicPath: 'images/',
@@ -52,10 +57,11 @@ module.exports = {
             loader: 'svg-url-loader',
             options: {
               esModule: false,
-              limit: false,
+              limit: 10 * 1024,
               name: '[name].[ext]',
               outputPath: 'images/',
               publicPath: 'images/',
+              noquotes: true,
             },
           },
         ],

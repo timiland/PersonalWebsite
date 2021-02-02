@@ -6,7 +6,7 @@ const express = require('express');
 
 const app = express();
 
-const buildPath = path.join(__dirname, '..', 'build');
+const buildPath = path.join(__dirname, '..', 'client/dist');
 
 app.use(express.json());
 
