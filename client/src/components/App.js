@@ -31,7 +31,7 @@ class App extends Component {
 <ResponsiveSection
     id="intro"
     topslant= {false}
-    bottomslant={true}
+    bottomslant={false}
     bg={'gray-200'}
     container={false}
     containerbg={'green-300'}
@@ -41,8 +41,8 @@ class App extends Component {
 
 <ResponsiveSection
     id="WebDevelopment"
-    topslant= {true}
-    bottomslant={true}
+    topslant= {false}
+    bottomslant={false}
     bg={'green-900'}
     container={false}
     containerbg={'white'}
@@ -53,7 +53,7 @@ class App extends Component {
 <ResponsiveSection
     id="GraphicDesign"
     topslant= {false}
-    bottomslant={true}
+    bottomslant={false}
     bg={'white'}
     container={false}
     containerbg={'white'}
@@ -63,8 +63,8 @@ class App extends Component {
 
 <ResponsiveSection
     id="Engineering"
-    topslant= {true}
-    bottomslant={true}
+    topslant= {false}
+    bottomslant={false}
     bg={'green-800'}
     container={false}
     containerbg={'white'}
@@ -75,7 +75,7 @@ class App extends Component {
 </ResponsiveSection>
 <ResponsiveSection
     id="ContactMe"
-    topslant= {true}
+    topslant= {false}
     bottomslant={false}
     bg={'gray-200'}
     container={false}

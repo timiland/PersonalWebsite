@@ -2,12 +2,6 @@ import React, { Fragment, useState } from 'react'
 import axios from 'axios'
 
 const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none border border-green-800 focus:shadow-inner rounded-md shadow-lg";
-const placeholders = [
-  "My business needs a brand new logo, we think that your style would really suit our brand.",
-  "We are in need of an Additive Manufacturing expert for our new product line. Would you be available to assess and potentially redesign our products for SLS production?",
-  "I run a small business based in North London. We are currently using squarespace for our website but we are wondering if maybe you could design us something really special to help us stand out from the competition?"
-];
-
 
  const ContactMe = () => {
 
@@ -27,10 +21,10 @@ const placeholders = [
         e.preventDefault();
 
         let data = state;
-        data = {...data, subject: data.subject.join(' ')};
+        data = {...data, subject: data.subject.join(', ')};
 
         axios({
-          url:'http://localhost:5000/api/send',
+          url:'/api/send',
           method: 'POST',
           data: { data }
         })
@@ -38,6 +32,7 @@ const placeholders = [
               setResult(res.data);
               setState({name:'',email:'',subject:[],message:''})
             })
+            
             .catch(() => {
               setResult({ success:false, message: 'Something went wrong. Try again later'})
             })
@@ -60,6 +55,7 @@ const placeholders = [
         } else {
 
           const i = subject.indexOf(value);
+
           subject.splice(i, 1);
 
         };
@@ -115,7 +111,7 @@ const placeholders = [
 
 <div className="relative">
 <label htmlFor="message" className="block text1 text-2xl">Message</label>
-      <textarea id="message" type="text" name="message" onChange={onInputChange} placeholder={placeholders[Math.floor(Math.random() * 2) + 1 ]} className={`${inputs} w-full h-56 content-start min-h-20`} required />
+      <textarea id="message" type="text" name="message" value={state.message} onChange={onInputChange} placeholder="What can I help you with?" className={`${inputs} w-full h-56 content-start min-h-20`} required />
      <button type="submit" className="transition duration-500 ease-in-out transform hover:-translate-y-2 hover:bg-green-900 bg-green-800  text-white shadow-lg bottom-4 right-4 rounded-md text-xl p-4 absolute">
         Send
       </button>

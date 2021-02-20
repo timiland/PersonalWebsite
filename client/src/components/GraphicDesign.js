@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import ModalPic from './ModalPic'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
-const slides = "z-0 h-80 w-full p-8";
+const slides = "z-10 h-80 w-full p-8";
 
 const logos = ['3tamplogo','CurlyKidLogo', 'MosaicLogo'];
 
@@ -43,11 +45,18 @@ function ImgCarousel(props) {
     totalSlides={props.totalSlides}
     visibleSlides={props.visibleSlides}
   >
-    <Slider className="rounded-md w-full h-80">
+    <div className="relative">
+    <Slider className="rounded-md w-full h-80 z-10">
     { props.children }
     </Slider>
-    {/* <ButtonBack>Back</ButtonBack>
-    <ButtonNext>Next</ButtonNext> */}
+    <ButtonBack className="text-green-900 select-none p-3 outline-none absolute top-32 -left-12 z-50" >
+    <FontAwesomeIcon icon={faAngleLeft} size="2x" />
+    </ButtonBack>
+    <ButtonNext className="text-green-900 select-none outline-none p-3 absolute top-32 -right-12 z-50" >
+    <FontAwesomeIcon icon={faAngleRight} size="2x" />
+    </ButtonNext>
+    <DotGroup/>
+    </div>
   </CarouselProvider>
     )
 }

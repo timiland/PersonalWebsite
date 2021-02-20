@@ -9,7 +9,7 @@ export default function Engineering() {
    <h1 className="text-5xl py-10 w-full text-center">Engineering</h1>
         <p className="mt-14 mb-8 mx-auto max-w-prose text-center text-lg"> I specialise in using SolidWorks for parametric CAD modelling and have over 5 years of experience using this software. Using Visual basic I have managed to automate the software using some of my own macros, but more recently I have used DriveWorks to implement automation projects.<br/><br/> I like to use Blender for more organic modelling, and I have experience using Materialise Magics for Additive Manufacturing - whilst there are other programs for 3D printing, I believe that Magics is a cut above them.</p>
     <div className="flex flex-wrap justify-center mx-8 mb-8 py-8 border-b border-white">
-</div>
+   </div>
 
    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-14">  
        <div className={`${card} flex flex-wrap content-between`}>
@@ -18,7 +18,7 @@ export default function Engineering() {
         <p className={`${li} w-full`}><span className="font-bold">Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">Solid Solutions</a> (2014 - 2015)</p>
         <p className={`${li} w-full`}><span className="font-bold">Polymer Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800 fontSecondary">3T Additive Manufacturing</a> (2018 - 2020)</p>
         <p className={`${li} w-full`}><span className="font-bold">Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">DriveWorks</a> (2020 - current)</p>
-        <a href="Root\client\src\download\CV TIM ILAND Tech.pdf" className="cursor-pointer w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-green-900 bg-green-800  text-white shadow-lg rounded-md text-2xl p-4 m-4 text1" download>Download Full Resume</a>
+        <a href="..\src\download\CV TIM ILAND Tech.pdf" className="cursor-pointer w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-green-900 bg-green-800  text-white shadow-lg rounded-md text-2xl p-4 m-4 text1" download>Download Full Resume</a>
 
        </div>
        <div className={`${card}`}>

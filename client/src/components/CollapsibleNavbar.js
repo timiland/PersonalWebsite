@@ -11,12 +11,12 @@ export default function CollapsibleNavbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const burgerMenu = `w-full h-1 ${isOpen? "bg-yellow-400" : "bg-white"}`;
-    const inputs = "sm:transition sm:duration-500 ease-in-out sm:transform hover:-translate-y-1 sm:hover:text-yellow-400 cursor-pointer p-2 mx-auto";
+    const inputs = "z-50 sm:transition sm:duration-500 ease-in-out sm:transform hover:-translate-y-1 sm:hover:text-yellow-400 cursor-pointer p-2 mx-auto";
     const active = "text-yellow-400";
 
     function Links(props) {
         return (
-        <div className="z-0 flex flex-col sm:flex-row text-3xl sm:text-2xl content-center my-auto gap-6 py-10 sm:py-0 bg-yellow-400 sm:bg-transparent bg-opacity-90">
+        <div className="z-40 flex flex-col sm:flex-row text-3xl sm:text-2xl content-center my-auto gap-6 py-10 sm:py-0 bg-yellow-400 sm:bg-transparent bg-opacity-90">
         <Link
             className={`${inputs}`}
             activeClass={active}
@@ -59,7 +59,7 @@ export default function CollapsibleNavbar() {
 
     return (
         <div>
-            <div className="z-40 h-20 fixed w-screen bg-green-900 border-b-2 border-yellow-400 text-white sm:text-2xl text-lg shadow-lg flex gap-6">
+            <div className="z-50 h-20 fixed w-screen bg-green-900 border-b-2 border-yellow-400 text-white sm:text-2xl text-lg shadow-lg flex gap-6">
                 <a
                     onClick={() => {scroll.scrollToTop()}}
                     className={`my-auto cursor-pointer mr-auto`}
@@ -83,7 +83,7 @@ export default function CollapsibleNavbar() {
             </div>
                 <Transition
                         show={isOpen}
-                        className="z-0 sm:hidden fixed w-screen mt-20 text-green-900 border-b-2 border-green-900"
+                        className="z-40 sm:hidden fixed w-screen mt-20 text-green-900 border-b-2 border-green-900"
                         enter="transition duration-500"
                         enterFrom="transform opacity-0 -translate-y-full"
                         enterTo="transform opacity-100 -translate-y-0"

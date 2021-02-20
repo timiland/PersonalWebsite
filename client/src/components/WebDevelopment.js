@@ -8,7 +8,7 @@ const iconArr = [faReact,faJsSquare,faHtml5,faCss3Alt,faSass,faNpm,faNode];
 const projectsArr = ['Big Cat Poll', 'Dog Selector', 'Ultimate Animal Quiz'];
 
 const icons = iconArr.map((icon, i) => (
-    <FontAwesomeIcon key={i} icon={icon} size="4x" className="m-4 transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-400"/>
+    <FontAwesomeIcon key={i} icon={icon} size="4x" className="z-0 m-4 transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-400"/>
 ))
 
 const projects = projectsArr.map((project, i) => (
@@ -40,7 +40,7 @@ export default function WebDevelopment() {
     <p className="py-14 mx-auto max-w-prose text-center text-lg">I focus primarily on front-end development using React.js, although I like to bring other technologies into the mix and have a solid knowledge of Web fundamentals like ES6 Javascript, HTML5 and CSS3. This Website is built using React, with Tailwind for styling and a variety of other packages.</p>
     <div className="flex justify-center">
         <div className="text1 cursor-pointer flex items-center text-3xl mt-4 bg-white hover:bg-yellow-400 text-green-900 rounded-md p-2 pr-4 transition duration-500 ease-in-out transform hover:-translate-y-1"><FontAwesomeIcon icon={faGithubSquare} size="2x" className="mr-4"/>Github</div></div>
-    <div className="flex flex-wrap justify-center py-16 border-b border-white">           
+    <div className="z-0 flex flex-wrap justify-center py-16 border-b border-white">           
         {icons}
     </div>
     <h2 className="text-4xl my-16 w-full text-center">Projects</h2>
