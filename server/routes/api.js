@@ -21,7 +21,7 @@ router.post('/send', (req, res) => {
         
         from: email,
         to: 'timothyiland@gmail.com',
-        subject: `New Email From Your Website${subject == "" ? "" : ", RE: "+ subject}`,
+        subject: `New Email From Your Website ${subject == "" ? "" : ", RE: "+ subject}`,
         html:`
         <p> You have a new email from your website! </p>
         <h3> Details </h3>
