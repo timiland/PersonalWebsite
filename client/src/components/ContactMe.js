@@ -34,7 +34,7 @@ const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none 
             })
             
             .catch(() => {
-              setResult({ success:false, message: 'Something went wrong. Try again later'})
+              setResult({ success:false, message: 'Something went wrong with Axios. Try again later'})
             })
     };
 
