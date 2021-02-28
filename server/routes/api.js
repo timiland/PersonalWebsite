@@ -15,7 +15,8 @@ router.post('/send', (req, res) => {
 
         let { name, email, subject, message } = req.body.data;
 
-        console.log(name, email, subject, "API route hit");
+        console.log(name, email, subject, message, "env-email", process.env.email,
+            "env-pass", process.env.password, "API route hit");
 
         const mailOptions = {
             

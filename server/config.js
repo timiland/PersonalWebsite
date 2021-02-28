@@ -8,8 +8,8 @@ var transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: process.env.email, // your email address to send email from
-    pass: process.env.password // your gmail account password
+    user: "timilandwebsitemailer@gmail.com", //process.env.email, // your email address to send email from
+    pass: "Little987" //process.env.password // your gmail account password
   }
 });
 
