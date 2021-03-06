@@ -56,6 +56,7 @@ router.post('/send', (req, res) => {
                 message: 'Something went wrong. Try again later',
                 error: error
             });
+            console.log(error);
         }
     });
 
