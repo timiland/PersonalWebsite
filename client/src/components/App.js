@@ -10,18 +10,6 @@ import Footer from './Footer';
 import '../styles.css';
 
 
-
-// function importAll(r) {
-//   let images = {};
-//   r.keys().map((item, index) => {
-//     images[item.replace('./', '')] = r(item);
-//   });
-//   return images;
-// }
-// export const images = importAll(
-//   require.context('../images', false, /\.(png|jpe?g|svg)$/)
-// );
-
 class App extends Component {
   render() {
     return (

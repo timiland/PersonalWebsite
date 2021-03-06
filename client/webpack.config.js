@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -19,6 +22,12 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: [
+              ['env', {'modules' :false}],
+              'react'
+            ]
+          }
         },
       },
       {
@@ -68,10 +77,22 @@ module.exports = {
       },
     ],
   },
-
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin()
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'server',
+      generateStatsFile: true,
+      statsOptions: { source: false }
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
   ],
 };
