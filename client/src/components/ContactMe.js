@@ -3,16 +3,38 @@ import axios from 'axios'
 
 const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none border border-green-800 focus:shadow-inner rounded-md shadow-lg";
 
+
+
  const ContactMe = () => {
 
     const [state, setState] = useState({
-
         name:'',
         email: '',
-        subject: [],
-        message: ''
+        message: '',
+        WebDev: false,
+        GraphicDesign: false,
+        Engineering: false,
+        emailSent: false
+    });
 
-    })
+
+    const subjects = [
+      {
+        name: 'WebDev',
+        label: 'Web Development',
+        checked: state.WebDev
+      },
+      {
+        name: 'GraphicDesign',
+        label: 'Graphic Design',
+        checked:  state.GraphicDesign
+      },
+      {
+        name: 'Engineering',
+        label: 'Engineering',
+        checked:  state.Engineering
+      },
+    ];
 
     const [result, setResult] = useState(null)
 
@@ -21,16 +43,17 @@ const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none 
         e.preventDefault();
 
         let data = state;
-        data = {...data, subject: data.subject.join(', ')};
+
+        data = {...data};
 
         axios({
-          url:'/api/send',
+          url:'http://localhost:5000/api/send',
           method: 'POST',
           data: { data }
         })
             .then(res => {
               setResult(res.data);
-              setState({name:'',email:'',subject:[],message:''})
+              setState({name:'',email:'',WebDev: false,GraphicDesign: false,Engineering: false ,message:''});
             })
             
             .catch(() => {
@@ -38,38 +61,18 @@ const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none 
             })
     };
 
-    const onInputChange = e => {
-
-        const { name } = e.target;
-
-        let { value } = e.target;
-
-        if (name == "subject") {
-
-          let subject = state.subject;
-        
-          if(subject.indexOf(value) === -1) {
-
-            subject.push(value);
-
-        } else {
-
-          const i = subject.indexOf(value);
-
-          subject.splice(i, 1);
-
-        };
-
-        value = subject;
-
-        };
-
-        setState({
-            ...state,
-            [name]:value
-        });
-
+    const onInputChange = (e) => {
+      const item = e.target.name;
+      const value =
+        e.target.type === "checkbox" ? e.target.checked : e.target.value;
+  
+      setState({
+        ...state,
+        [item]: value
+      });
     };
+
+
 
 
     return (
@@ -89,9 +92,19 @@ const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none 
       <label htmlFor="email" className="block mt-2 text1 text-2xl">Subject (Optional)</label>
 
 <div className="flex sm:flex-nowrap flex-wrap mt-4">
-<div className="w-full sm:w-auto">
+
+{subjects.map((subject, i) => (
+      <div className="w-full sm:w-auto" key={i}>
       <label className="flex content-center p-3">
-        <input type="checkbox" name="subject" value="Web Development" onChange={onInputChange} className=""/>
+        <input type="checkbox" name={subject.name} onChange={onInputChange} className="" checked={state[subject.name]}/>
+        <span className="ml-3">{subject.label}</span>
+      </label>
+    </div>
+))}
+
+    {/* <div className="w-full sm:w-auto">
+      <label className="flex content-center p-3">
+        <input type="checkbox" name="subject" value="Web Development" onChange={onInputChange} className="" checked={state.subject.indexOf('Web Development') == -1? false:true}/>
         <span className="ml-3">Web Development</span>
       </label>
     </div>
@@ -106,7 +119,7 @@ const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none 
         <input type="checkbox" name="subject" value="Engineering" onChange={onInputChange} className=""/>
         <span className="ml-3">Engineering</span>
       </label>
-    </div>
+    </div> */}
 </div>
 
 <div className="relative">
@@ -116,6 +129,7 @@ const inputs = "block p-3 mt-4 mb-2 bg-white focus:outline-none appearance-none 
         Send
       </button>
       </div>
+      { result? <div className="bg-yellow-400 p-3 rounded-md shadow-md text-center mx-auto">Your message has been sent, thank you for getting in touch!</div> : "" }
     </form>
   </Fragment>
     )

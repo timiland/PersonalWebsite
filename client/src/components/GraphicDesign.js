@@ -7,9 +7,9 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const slides = "z-10 h-80 w-full p-8";
 
-const logos = ['3tamplogo','CurlyKidLogo', 'MosaicLogo'];
+const logos = ['3tamplogo','CurlyKidLogo', 'VentusLogo'];
 
-const illustrations = ['AfghanHound','Ankylosaurus', 'CloudedLeopard' , 'Dalmatian' , 'Footballers', 'HarpyEagle', 'Husky', 'Jaguar', 'Octupus'];
+const illustrations = ['AfghanHound','Octopus','Jaguar'];
 
 const logoSlides = logos.map((logo, i) => (
     <Slide index={i} key={i}><img className={`${slides}`} src={require(`../images/logos/${logo}.svg`)}></img></Slide>
@@ -66,14 +66,14 @@ export default function GraphicDesign(props) {
     return (
       <Fragment>
     <h1 className="text-5xl py-10 w-full text-center">Graphic Design</h1>
-    <p className="mt-14 mb-8 mx-auto max-w-prose text-center text-lg">Hopefully you took the time to look at some of my Web Projects shown above. You'll notice that most of my Web Projects make use of my illustrations. I have been involved in some logo design and graphic projects, and my eye for graphics and aesthetics always works its way into my other projects.</p>
+    <p className="mt-14 mb-8 mx-auto max-w-prose text-center text-lg">Hopefully you took the time to look at some of my Web Projects shown above. You'll notice that most of my Web Projects make use of my illustrations. I have been involved in a range of freelance graphic design projects and my eye for graphics and aesthetics usually manages to find its way into my other projects too.</p>
 
     <div className="flex flex-wrap justify-center mx-8 mb-8 py-8 border-b border-black">
     </div>
 
-    <h2 className="text-4xl my-4 w-full text-center">Logos</h2>
+    <h2 className="text-4xl py-10 w-full text-center">Logos</h2>
 
-    <div className="sm:hidden block">
+    <div className="sm:hidden block pb-10">
     <ImgCarousel 
       visibleSlides={1}
       totalSlides={3}>
@@ -81,14 +81,14 @@ export default function GraphicDesign(props) {
     </ImgCarousel>
     </div>
 
-    <div className="hidden sm:grid grid-cols-3">
+    <div className="hidden sm:grid grid-cols-3 pb-10">
         {logoPics}
     </div>
 
-    <h2 className="text-4xl my-4 w-full text-center">Illustrations</h2>
-    <p className="mt-4 mx-auto max-w-prose text-center text-lg">Hopefully you took the time to look at some of my Web Projects shown above. If so, you'll notice that most of my Web Projects make use of my illustrations. I have been involved in some logo design and graphic projects shown below, and whilst I am not pursuing a career in Graphic Design, my eye for graphics and aesthetics always works its way into my other projects. I've also served as an emergency Graphic Designer in past roles - my previous employer now uses a logo I designed for them!</p>
+    <h2 className="text-4xl py-10 w-full text-center">Illustrations</h2>
+    <p className="py-10 mx-auto max-w-prose text-center text-lg">I have spent many years developing my illustration style, which involves just the right amount of realism to look slick and professional, but also playful and easy on the eye. You can find my illustrations on <a className="no-underline text-blue-800" href="https://www.shutterstock.com/g/Timothy+Iland" target="_blank">Shutterstock</a>, and purchase them as fabrics on <a className="no-underline text-blue-800" href="https://www.spoonflower.com/profiles/hornbill_design" target="_blank">Spoonflower</a>.</p>
 
-    <div className="sm:hidden block">
+    <div className="sm:hidden block pb-10">
     <ImgCarousel 
       visibleSlides={1}
       totalSlides={9}>
@@ -96,7 +96,7 @@ export default function GraphicDesign(props) {
     </ImgCarousel>
     </div>
 
-    <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3">
+    <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3 pb-10">
         {illPics}
     </div>
     </Fragment>

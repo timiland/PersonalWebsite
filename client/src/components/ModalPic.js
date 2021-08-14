@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const slides = "z-0 h-80 w-full p-8 cursor-pointer";
+const slides = "z-0 h-80 w-full p-12 cursor-pointer";
 
 export default function ModalPic(props) {
 

@@ -18,7 +18,7 @@ export default function Engineering() {
         <p className={`${li} w-full`}><span className="font-bold">Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">Solid Solutions</a> (2014 - 2015)</p>
         <p className={`${li} w-full`}><span className="font-bold">Polymer Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800 fontSecondary">3T Additive Manufacturing</a> (2018 - 2020)</p>
         <p className={`${li} w-full`}><span className="font-bold">Applications Engineer</span><br/><a href="#" className="no-underline text-blue-800">DriveWorks</a> (2020 - current)</p>
-        <a href="..\src\download\CV TIM ILAND Tech.pdf" className="cursor-pointer w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-green-900 bg-green-800  text-white shadow-lg rounded-md text-2xl p-4 m-4 text1" download>Download Full Resume</a>
+        <a href=".\src\download\CV TIM ILAND Tech.pdf" className="cursor-pointer w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-green-900 bg-green-800  text-white shadow-lg rounded-md text-2xl p-4 m-4 text1" download>Download Full Resume</a>
 
        </div>
        <div className={`${card}`}>

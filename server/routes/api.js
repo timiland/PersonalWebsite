@@ -13,10 +13,13 @@ router.post('/send', (req, res) => {
 
     try{
 
-        let { name, email, subject, message } = req.body.data;
+        let { name, email, subject, message, WebDev, GraphicDesign, Engineering } = req.body.data;
 
         console.log(name, email, subject, message, "env-email", process.env.email,
             "env-pass", process.env.password, "API route hit");
+
+        let subjects = [WebDev, GraphicDesign, Engineering]
+        .filter(o => o)
 
         const mailOptions = {
             
